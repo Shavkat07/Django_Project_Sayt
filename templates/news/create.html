@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% block title %} Yangi maqola qo'shish {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Yangi maqola qo'shish </h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+
+<!--            <input type="text" placeholder="Maqola Nomi" class="form-control"><br>-->
+<!--            <input type="text" placeholder="Maqola Anonsi" class="form-control"><br>-->
+<!--            <textarea class="form-control" placeholder="Maqola Matni"></textarea><br>-->
+<!--            <input type="date" class="form-control"><br>-->
+<!--            <input type="time" class="form-control"><br>-->
+            <button class="btn btn-success" type="submit"> Maqola qo'shish</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% block title %} Maqolani o'chirish {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Maqolani o'chirish </h1>
+        <form method="post">
+            {% csrf_token %}<br>
+
+
+            <button class="btn btn-success" type="submit"> Maqolani o'chirish</button>
+        </form>
+    </div>
+
+{% endblock %}

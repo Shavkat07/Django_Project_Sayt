@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% block title %} Saytdagi yangiliklar {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Saytdagi yangiliklar</h1>
+
+<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut dolore dolores ea impedit laboriosam libero officia tempora voluptas voluptatum!</p>-->
+<!--        <button class="btn btn-warning">Men haqimdagi saytga </button>-->
+<!--        -->
+        {% if news %}
+
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Aniqroq o'rganish</a>
+                </div>
+            {% endfor %}
+
+        {% else %}
+                <p>Sizda hech qanday malumotlar yo'q!</p>
+        {% endif %}
+        {# Kommentariy #}
+
+
+    </div>
+
+{% endblock %}
